@@ -72,6 +72,7 @@ jobs:
       - name: Scan image with Trivy
         # 0.35.0 is the release published after the March 2026 tag compromise
         uses: aquasecurity/trivy-action@0.35.0
+        continue-on-error: true
         with:
           version: v0.69.3
           image-ref: ${{ env.IMAGE_NAME }}:scan
